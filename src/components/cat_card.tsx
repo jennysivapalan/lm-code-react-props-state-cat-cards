@@ -6,6 +6,7 @@ interface CatCardProps {
   favFoods: Array<string>;
   birthYear: number;
   index: number;
+  index: number;
 }
 
 const CatCard: React.FC<CatCardProps> = ({
