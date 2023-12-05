@@ -85,12 +85,13 @@ function App(): JSX.Element {
   ];
 
   const [cats, setCats] = useState<Array<Cat>>(catData);
-  const catCards = cats.map((cat) => (
+  const catCards = cats.map((cat, index) => (
     <CatCard
       name={cat.name}
       species={cat.species}
       favFoods={cat.favFoods}
       birthYear={cat.birthYear}
+      index={index}
     />
   ));
 
