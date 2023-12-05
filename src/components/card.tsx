@@ -17,8 +17,9 @@ const Card: React.FC<CardProps> = ({
   index,
   isCat,
 }) => {
+  const cardClass = isCat ? "card" : "card card--dog";
   return (
-    <div className="card">
+    <div className={cardClass}>
       <h3 className="card__text card__header">{name}</h3>
       <p className="card__text">Species: {species}</p>
       <p className="card__text">Favourite Food(s): {favFoods.join(", ")}</p>

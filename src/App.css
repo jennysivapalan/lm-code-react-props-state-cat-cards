@@ -63,6 +63,11 @@ body {
   margin: 0.5em;
 }
 
+.card--dog {
+  border: 6px solid var(--navy);
+  background: var(--orange);
+}
+
 .card:hover {
   box-shadow: 0 4px 8px 0 rgb(13, 59, 102, 0.9);
 }
