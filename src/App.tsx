@@ -19,10 +19,22 @@ function App(): JSX.Element {
       favFoods={cat.favFoods}
       birthYear={cat.birthYear}
       index={index}
+      isCat={true}
     />
   ));
-
   const [dogs, setDogs] = useState<Array<Dog>>(dogData);
+
+  const dogCards = dogs.map((dog, index) => (
+    <CatCard
+      key={dog.id}
+      name={dog.name}
+      species={dog.species}
+      favFoods={dog.favFoods}
+      birthYear={dog.birthYear}
+      index={index}
+      isCat={false}
+    />
+  ));
 
   return (
     <>
@@ -31,6 +43,7 @@ function App(): JSX.Element {
 
       <main>
         <div className="cards__wrapper">{catCards}</div>
+        <div className="cards__wrapper">{dogCards}</div>
       </main>
 
       <Footer />

@@ -6,6 +6,7 @@ interface CatCardProps {
   favFoods: Array<string>;
   birthYear: number;
   index: number;
+  isCat: boolean;
 }
 
 const CatCard: React.FC<CatCardProps> = ({
@@ -14,6 +15,7 @@ const CatCard: React.FC<CatCardProps> = ({
   favFoods,
   birthYear,
   index,
+  isCat,
 }) => {
   return (
     <div className="card">
@@ -21,7 +23,7 @@ const CatCard: React.FC<CatCardProps> = ({
       <p className="card__text">Species: {species}</p>
       <p className="card__text">Favourite Food(s): {favFoods.join(", ")}</p>
       <p className="card__text">Birth Year: {birthYear}</p>
-      {index < images.length && (
+      {isCat && index < images.length && (
         <CatImage
           image={images[index].image}
           altText={images[index].altText}
