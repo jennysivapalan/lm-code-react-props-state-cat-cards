@@ -3,14 +3,13 @@ import Navbar from "./components/navbar";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import { useState } from "react";
-import Cat from "./data/cat";
+import Animal from "./data/animal";
 import Card from "./components/card";
 import catData from "./data/cat-data";
-import Dog from "./data/dog";
 import dogData from "./data/dog-data";
 
 function App(): JSX.Element {
-  const [cats, setCats] = useState<Array<Cat>>(catData);
+  const [cats, setCats] = useState<Array<Animal>>(catData);
   const catCards = cats.map((cat, index) => (
     <Card
       key={cat.id}
@@ -22,7 +21,7 @@ function App(): JSX.Element {
       isCat={true}
     />
   ));
-  const [dogs, setDogs] = useState<Array<Dog>>(dogData);
+  const [dogs, setDogs] = useState<Array<Animal>>(dogData);
 
   const dogCards = dogs.map((dog, index) => (
     <Card

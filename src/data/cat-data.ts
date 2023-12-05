@@ -1,7 +1,7 @@
-import Cat from "./cat";
+import Animal from "./animal";
 import { v4 as uuidv4 } from "uuid";
 
-const catData: Array<Cat> = [
+const catData: Array<Animal> = [
   {
     name: "Little Miss Purrfect",
     species: "Cat",

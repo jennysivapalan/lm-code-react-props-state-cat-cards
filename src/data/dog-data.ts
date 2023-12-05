@@ -1,6 +1,6 @@
-import Dog from "./dog";
+import Animal from "./animal";
 
-const dogs: Array<Dog> = [
+const dogs: Array<Animal> = [
   {
     name: "Floofus",
     species: "Puppy",
