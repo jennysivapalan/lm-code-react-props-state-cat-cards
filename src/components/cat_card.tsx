@@ -128,14 +128,16 @@ const CatCard: React.FC<CatCardProps> = (props) => {
         Favourite Food(s): {props.favFoods.join(", ")}
       </p>
       <p className="card__text">Birth Year: {props.birthYear}</p>
-      <CatImage
-        image={images[props.index].image}
-        altText={images[props.index].altText}
-        licenceType={images[props.index].licenceType}
-        licenceUrl={images[props.index].licenceUrl}
-        attributionName={images[props.index].attributionName}
-        attributionUrl={images[props.index].attributionUrl}
-      />
+      {props.index < images.length && (
+        <CatImage
+          image={images[props.index].image}
+          altText={images[props.index].altText}
+          licenceType={images[props.index].licenceType}
+          licenceUrl={images[props.index].licenceUrl}
+          attributionName={images[props.index].attributionName}
+          attributionUrl={images[props.index].attributionUrl}
+        />
+      )}
     </div>
   );
 };
