@@ -119,23 +119,27 @@ interface CatCardProps {
   index: number;
 }
 
-const CatCard: React.FC<CatCardProps> = (props) => {
+const CatCard: React.FC<CatCardProps> = ({
+  name,
+  species,
+  favFoods,
+  birthYear,
+  index,
+}) => {
   return (
     <div className="card">
-      <h3 className="card__text card__header">{props.name}</h3>
-      <p className="card__text">Species: {props.species}</p>
-      <p className="card__text">
-        Favourite Food(s): {props.favFoods.join(", ")}
-      </p>
-      <p className="card__text">Birth Year: {props.birthYear}</p>
-      {props.index < images.length && (
+      <h3 className="card__text card__header">{name}</h3>
+      <p className="card__text">Species: {species}</p>
+      <p className="card__text">Favourite Food(s): {favFoods.join(", ")}</p>
+      <p className="card__text">Birth Year: {birthYear}</p>
+      {index < images.length && (
         <CatImage
-          image={images[props.index].image}
-          altText={images[props.index].altText}
-          licenceType={images[props.index].licenceType}
-          licenceUrl={images[props.index].licenceUrl}
-          attributionName={images[props.index].attributionName}
-          attributionUrl={images[props.index].attributionUrl}
+          image={images[index].image}
+          altText={images[index].altText}
+          licenceType={images[index].licenceType}
+          licenceUrl={images[index].licenceUrl}
+          attributionName={images[index].attributionName}
+          attributionUrl={images[index].attributionUrl}
         />
       )}
     </div>
