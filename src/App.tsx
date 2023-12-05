@@ -6,6 +6,8 @@ import { useState } from "react";
 import Cat from "./data/cat";
 import CatCard from "./components/cat_card";
 import catData from "./data/cat-data";
+import Dog from "./data/dog";
+import dogData from "./data/dog-data";
 
 function App(): JSX.Element {
   const [cats, setCats] = useState<Array<Cat>>(catData);
@@ -20,10 +22,12 @@ function App(): JSX.Element {
     />
   ));
 
+  const [dogs, setDogs] = useState<Array<Dog>>(dogData);
+
   return (
     <>
       <Navbar />
-      <Header numCats={cats.length} />
+      <Header numCats={cats.length} numDogs={dogs.length} />
 
       <main>
         <div className="cards__wrapper">{catCards}</div>

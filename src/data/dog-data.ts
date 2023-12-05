@@ -20,3 +20,5 @@ const dogs: Array<Dog> = [
     birthYear: 2015,
   },
 ];
+
+export default dogs;
