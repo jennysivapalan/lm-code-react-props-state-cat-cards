@@ -4,7 +4,7 @@ import Header from "./components/header";
 import Footer from "./components/footer";
 import { useState } from "react";
 import Cat from "./data/cat";
-import CatCard from "./components/cat_card";
+import Card from "./components/card";
 import catData from "./data/cat-data";
 import Dog from "./data/dog";
 import dogData from "./data/dog-data";
@@ -12,7 +12,7 @@ import dogData from "./data/dog-data";
 function App(): JSX.Element {
   const [cats, setCats] = useState<Array<Cat>>(catData);
   const catCards = cats.map((cat, index) => (
-    <CatCard
+    <Card
       key={cat.id}
       name={cat.name}
       species={cat.species}
@@ -25,7 +25,7 @@ function App(): JSX.Element {
   const [dogs, setDogs] = useState<Array<Dog>>(dogData);
 
   const dogCards = dogs.map((dog, index) => (
-    <CatCard
+    <Card
       key={dog.id}
       name={dog.name}
       species={dog.species}
