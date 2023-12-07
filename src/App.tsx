@@ -2,6 +2,7 @@ import "./App.css";
 import Navbar from "./components/navbar";
 import Header from "./components/header";
 import Footer from "./components/footer";
+import Form from "./components/form";
 import { useState } from "react";
 import Animal from "./data/animal";
 import Card from "./components/card";
@@ -10,6 +11,7 @@ import dogData from "./data/dog-data";
 
 function App(): JSX.Element {
   const [cats, setCats] = useState<Array<Animal>>(catData);
+
   const catCards = cats.map((cat, index) => (
     <Card
       key={cat.id}
@@ -35,6 +37,10 @@ function App(): JSX.Element {
     />
   ));
 
+  function handleFormData(newCatData: Animal) {
+    setCats([...cats, newCatData]);
+  }
+
   return (
     <>
       <Navbar />
@@ -44,7 +50,7 @@ function App(): JSX.Element {
         <div className="cards__wrapper">{catCards}</div>
         <div className="cards__wrapper">{dogCards}</div>
       </main>
-
+      <Form change={handleFormData} />
       <Footer />
     </>
   );
