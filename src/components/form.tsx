@@ -9,6 +9,7 @@ export const Form: React.FC<CatProps> = ({ change }) => {
   const [inputName, setInputName] = useState("");
   const [inputFavFoods, setInputFavFoods] = useState<string[]>([]);
   const [inputBirthYear, setInputBirthYear] = useState(0);
+  const [inputAnimalType, setInputAnimalType] = useState("Cat");
 
   function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
     const value = event.target.value;
@@ -24,6 +25,10 @@ export const Form: React.FC<CatProps> = ({ change }) => {
         break;
       case "birthYear":
         setInputBirthYear(Number(value));
+        break;
+      case "animalType":
+        setInputAnimalType(value);
+        break;
     }
   }
 
@@ -31,7 +36,7 @@ export const Form: React.FC<CatProps> = ({ change }) => {
     event.preventDefault();
     const catData = {
       name: inputName,
-      species: "Cat",
+      species: inputAnimalType,
       favFoods: inputFavFoods,
       birthYear: inputBirthYear,
     };
@@ -51,6 +56,26 @@ export const Form: React.FC<CatProps> = ({ change }) => {
               value={inputName}
               onChange={handleInputChange}
             ></input>
+          </div>
+          <div>
+            <label htmlFor="animalType">Cat or Dog</label>
+            <input
+              type="radio"
+              value="Cat"
+              name="animalType"
+              id="animalType"
+              checked
+              onChange={handleInputChange}
+            />
+            Cat
+            <input
+              type="radio"
+              value="Dog"
+              name="animalType"
+              id="animalType"
+              onChange={handleInputChange}
+            />
+            Dog
           </div>
           <div>
             <label htmlFor="favFoods">Favourite food(s)</label>

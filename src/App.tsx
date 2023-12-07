@@ -37,8 +37,11 @@ function App(): JSX.Element {
     />
   ));
 
-  function handleFormData(newCatData: Animal) {
-    setCats([...cats, newCatData]);
+  function handleFormData(newData: Animal) {
+    console.log(newData.species);
+    newData.species === "Cat"
+      ? setCats([...cats, newData])
+      : setDogs([...dogs, newData]);
   }
 
   return (
