@@ -45,10 +45,12 @@ export const Form: React.FC<CatProps> = ({ change }) => {
 
   return (
     <>
-      <div>
-        <h3>Add your favourite Cat and their details below!</h3>
+      <div className="form">
+        <h3 className="card__text">
+          Add your favourite Cat or Dog details below!
+        </h3>
         <form onSubmit={submitDetails}>
-          <div>
+          <div className="form__text__small ">
             <label htmlFor="name">Name</label>
             <input
               type="text"
@@ -57,7 +59,7 @@ export const Form: React.FC<CatProps> = ({ change }) => {
               onChange={handleInputChange}
             ></input>
           </div>
-          <div>
+          <div className="form__text__small">
             <label htmlFor="animalType">Cat or Dog</label>
             <input
               type="radio"
@@ -77,7 +79,7 @@ export const Form: React.FC<CatProps> = ({ change }) => {
             />
             Dog
           </div>
-          <div>
+          <div className="form__text__small">
             <label htmlFor="favFoods">Favourite food(s)</label>
             <input
               type="text"
@@ -86,7 +88,7 @@ export const Form: React.FC<CatProps> = ({ change }) => {
               onChange={handleInputChange}
             ></input>
           </div>
-          <div>
+          <div className="form__text__small">
             <label htmlFor="birthYear">Birth year</label>
             <input
               type="text"
@@ -95,7 +97,7 @@ export const Form: React.FC<CatProps> = ({ change }) => {
               onChange={handleInputChange}
             ></input>
           </div>
-          <button>Submit</button>
+          <button className="form__text__small">Submit</button>
         </form>
       </div>
     </>
